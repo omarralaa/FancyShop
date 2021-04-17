@@ -27,7 +27,7 @@ class LoginController extends GetxController {
     if (!formKey.currentState.validate()) {
       return;
     }
-    
+
     final authController = Get.find<AuthController>();
     try {
       await authController.signInWithEmailPassword(
@@ -38,6 +38,12 @@ class LoginController extends GetxController {
   }
 
   signUp() {}
+
+  forgetPassword() {}
+
+  back() {
+    Get.back();
+  }
 
   String validateEmail(String str) {
     return isEmail(str) ? null : 'Please enter a valid email';

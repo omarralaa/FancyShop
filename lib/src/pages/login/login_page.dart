@@ -3,31 +3,39 @@ import 'package:get/get.dart';
 import 'package:shop/src/core/values/constants.dart';
 
 import 'package:shop/src/pages/login/login_controller.dart';
+import 'package:shop/src/pages/login/widgets/login_background.dart';
+import 'package:shop/src/pages/login/widgets/login_button.dart';
+import 'package:shop/src/pages/login/widgets/login_form.dart';
 
 class LoginPage extends GetView<LoginController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Container(
+      resizeToAvoidBottomInset: false,
+      body: Stack(
+        children: [
+          LoginBackground(),
+          Container(
             padding: EdgeInsets.symmetric(
-                horizontal: Constants.deviceWidth * 0.1,
-                vertical: Constants.deviceHeight * 0.1),
+              horizontal: Constants.deviceWidth * 0.1,
+              vertical: Constants.deviceHeight * 0.1,
+            ),
             child: Column(
-              //mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 _buildLoginText(),
-                SizedBox(height: Constants.deviceHeight * 0.1),
-                _buildForm(context),
-                _buildLoginButton(),
-                _buildSignUpRow(),
-                _buildStorePhoto(),
+                SizedBox(height: Constants.deviceHeight * 0.2),
+                LoginForm(),
+                SizedBox(height: Constants.deviceHeight * 0.012),
+                LoginButton(),
+                SizedBox(
+                  height: Constants.deviceHeight * 0.01,
+                ),
+                _buildSignUpRow(context),
               ],
             ),
           ),
-        ),
+        ],
       ),
     );
   }
@@ -36,98 +44,20 @@ class LoginPage extends GetView<LoginController> {
     return Align(
       alignment: Alignment.centerLeft,
       child: Text(
-        'Login',
-        style: TextStyle(fontSize: Constants.deviceWidth * 0.07),
-      ),
-    );
-  }
-
-  Widget _buildForm(context) {
-    return Form(
-      key: controller.formKey,
-      child: Column(
-        children: [
-          _buildEmailTextField(context),
-          SizedBox(height: Constants.deviceHeight * 0.015),
-          _buildPasswordTextField(context),
-          SizedBox(height: Constants.deviceHeight * 0.05),
-        ],
-      ),
-    );
-  }
-
-  Widget _buildEmailTextField(context) {
-    return TextFormField(
-      controller: controller.emailController,
-      style: TextStyle(fontSize: Constants.deviceHeight * 0.018),
-      decoration: InputDecoration(
-        hintText: 'Email',
-      ),
-      focusNode: controller.emailFocusNode,
-      onFieldSubmitted: (_) =>
-          FocusScope.of(context).requestFocus(controller.passwordFocusNode),
-      textInputAction: TextInputAction.next,
-      validator: controller.validateEmail,
-    );
-  }
-
-  Widget _buildPasswordTextField(context) {
-    return Obx(
-      () => TextFormField(
-        obscureText: controller.isPasswordHidden,
-        controller: controller.passwordController,
-        style: TextStyle(fontSize: Constants.deviceHeight * 0.018),
-        decoration: InputDecoration(
-          hintText: 'Password',
-          suffixIcon: IconButton(
-            icon: Icon(
-              controller.isPasswordHidden
-                  ? Icons.remove_red_eye
-                  : Icons.remove_red_eye_outlined,
-              color: controller.isPasswordHidden
-                  ? Colors.grey
-                  : Theme.of(context).primaryColor,
-            ),
-            onPressed: () =>
-                controller.isPasswordHidden = !controller.isPasswordHidden,
-          ),
+        'Welcome\nBack',
+        style: TextStyle(
+          fontSize: Constants.deviceWidth * 0.1,
+          color: Colors.white,
+          fontWeight: FontWeight.bold,
         ),
-        validator: controller.validatePassword,
-        focusNode: controller.passwordFocusNode,
-        onFieldSubmitted: (_) => controller.login(),
       ),
     );
   }
 
-  Widget _buildLoginButton() {
-    return InkWell(
-      child: Container(
-        width: double.infinity,
-        height: Constants.deviceHeight * 0.06,
-        decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.centerLeft,
-              end: Alignment.centerRight,
-              colors: [Colors.blue, Colors.lightBlue],
-            ),
-            borderRadius: BorderRadius.all(
-                Radius.circular(Constants.deviceWidth * 0.015))),
-        child: Center(
-            child: Text(
-          'Login',
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold,
-          ),
-        )),
-      ),
-      onTap: controller.login,
-    );
-  }
-
-  Widget _buildSignUpRow() {
+  Widget _buildSignUpRow(context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Text(
           'Don\'t have an account ?',
@@ -136,20 +66,14 @@ class LoginPage extends GetView<LoginController> {
         TextButton(
           onPressed: controller.signUp,
           child: Text(
-            'Sign up',
-            style: TextStyle(color: Colors.black),
+            'SIGN UP',
+            style: TextStyle(
+              color: Theme.of(context).primaryColor,
+              fontWeight: FontWeight.bold,
+            ),
           ),
         ),
       ],
-    );
-  }
-
-  Widget _buildStorePhoto() {
-    return Image(
-      image: AssetImage(
-        'assets/images/store.png',
-      ),
-      height: Constants.deviceHeight * 0.3,
     );
   }
 }
