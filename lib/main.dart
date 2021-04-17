@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:shop/src/pages/splash/splash_page.dart';
+import 'package:shop/src/controllers/auth_controller.dart';
 import 'package:shop/src/routes/app_pages.dart';
 import 'package:shop/src/routes/app_routes.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  Get.put<AuthController>(AuthController());
+
   runApp(MyApp());
 }
 
@@ -16,6 +19,7 @@ class MyApp extends StatelessWidget {
       title: 'Shop',
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        accentColor: Colors.grey,
       ),
       getPages: AppPages.pages,
       initialRoute: Routes.SPLASH,

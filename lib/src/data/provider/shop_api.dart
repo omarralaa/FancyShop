@@ -7,7 +7,7 @@ const BASE_URL = 'https://jsonplaceholder.typicode.com/posts/';
 class ShopApiClient {
   Dio _dio;
 
-  Dio get httpClient  => _dio;
+  Dio get httpClient => _dio;
 
   initializeInterceptors() {
     _dio.interceptors.add(
@@ -30,11 +30,12 @@ class ShopApiClient {
   }
 
   void init() {
-    final token = Get.find<AuthController>().token;
+    //final token = Get.find<AuthController>().token;
+    final token = '';
     _dio = Dio(
       BaseOptions(
         baseUrl: BASE_URL,
-        headers: { if (token) "Authorization": "Bearer $token"},
+        headers: {if (!token.isEmpty) "Authorization": "Bearer $token"},
       ),
     );
 

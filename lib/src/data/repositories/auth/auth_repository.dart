@@ -19,11 +19,9 @@ class AuthRepository implements IAuthRepository {
     try {
       //final response = await _httpService.post('/auth', data: {});
 
-      Future.delayed(Duration(seconds: 1), () {
-        return AuthResponseModel(
-          token: 'JKHASKJFH2193012031JSADDH',
-        );
-      });
+      return AuthResponseModel(
+        token: 'JKHASKJFH2193012031JSADDH',
+      );
     } on DioError catch (e) {}
     return null;
   }
@@ -32,11 +30,9 @@ class AuthRepository implements IAuthRepository {
   Future<AuthResponseModel> signUp(Map<String, String> user) async {
     try {
       //final response await _httpService.post('/auth', data: {});
-      Future.delayed(Duration(seconds: 1), () {
-        return AuthResponseModel(
-          token: 'JKHASKJFH2193012031JSADDH',
-        );
-      });
+      return AuthResponseModel(
+        token: 'JKHASKJFH2193012031JSADDH',
+      );
     } on DioError catch (e) {}
     return null;
   }
