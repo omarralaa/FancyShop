@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:shop/src/controllers/auth_controller.dart';
+import 'package:shop/src/routes/app_routes.dart';
 import 'package:validators/validators.dart';
 
 class LoginController extends GetxController {
@@ -37,7 +38,9 @@ class LoginController extends GetxController {
     }
   }
 
-  signUp() {}
+  void signUp() {
+    Get.offNamed(Routes.REGISTER);
+  }
 
   forgetPassword() {}
 
@@ -45,13 +48,4 @@ class LoginController extends GetxController {
     Get.back();
   }
 
-  String validateEmail(String str) {
-    return isEmail(str) ? null : 'Please enter a valid email';
-  }
-
-  String validatePassword(String password) {
-    return password.length >= 6
-        ? null
-        : 'Passwords must be at least 6 chars long';
-  }
 }

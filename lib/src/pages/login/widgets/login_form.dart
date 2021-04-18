@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shop/src/core/utils/validators.dart';
 import 'package:shop/src/core/values/colors.dart';
 import 'package:shop/src/core/values/constants.dart';
 
@@ -36,7 +37,7 @@ class LoginForm extends GetView<LoginController> {
       onFieldSubmitted: (_) =>
           FocusScope.of(context).requestFocus(controller.passwordFocusNode),
       textInputAction: TextInputAction.next,
-      validator: controller.validateEmail,
+      validator: Validations.validateEmail,
     );
   }
 
@@ -64,7 +65,7 @@ class LoginForm extends GetView<LoginController> {
                 controller.isPasswordHidden = !controller.isPasswordHidden,
           ),
         ),
-        validator: controller.validatePassword,
+        validator: Validations.validatePassword,
         focusNode: controller.passwordFocusNode,
         onFieldSubmitted: (_) => controller.login(),
       ),

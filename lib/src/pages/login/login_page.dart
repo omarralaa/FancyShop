@@ -6,6 +6,7 @@ import 'package:shop/src/pages/login/login_controller.dart';
 import 'package:shop/src/pages/login/widgets/login_background.dart';
 import 'package:shop/src/pages/login/widgets/login_button.dart';
 import 'package:shop/src/pages/login/widgets/login_form.dart';
+import 'package:shop/src/pages/login/widgets/signup_row.dart';
 
 class LoginPage extends GetView<LoginController> {
   @override
@@ -28,10 +29,8 @@ class LoginPage extends GetView<LoginController> {
                 LoginForm(),
                 SizedBox(height: Constants.deviceHeight * 0.012),
                 LoginButton(),
-                SizedBox(
-                  height: Constants.deviceHeight * 0.01,
-                ),
-                _buildSignUpRow(context),
+                SizedBox(height: Constants.deviceHeight * 0.01),
+                SignUpRow(),
               ],
             ),
           ),
@@ -51,29 +50,6 @@ class LoginPage extends GetView<LoginController> {
           fontWeight: FontWeight.bold,
         ),
       ),
-    );
-  }
-
-  Widget _buildSignUpRow(context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Text(
-          'Don\'t have an account ?',
-          style: TextStyle(color: Colors.grey),
-        ),
-        TextButton(
-          onPressed: controller.signUp,
-          child: Text(
-            'SIGN UP',
-            style: TextStyle(
-              color: Theme.of(context).primaryColor,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-      ],
     );
   }
 }
