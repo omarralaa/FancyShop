@@ -8,13 +8,13 @@ class SignUpButton extends GetView<RegisterController> {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: Constants.deviceHeight * 0.067,
+      height: Get.height * 0.067,
       child: ElevatedButton(
         onPressed: controller.register,
         child: Text(
           'SIGN UP',
           style: TextStyle(
-              fontSize: Constants.deviceHeight * 0.02,
+              fontSize: Get.height * 0.02,
               fontWeight: FontWeight.bold,
               color: Theme.of(context).primaryColor),
         ),
@@ -22,7 +22,7 @@ class SignUpButton extends GetView<RegisterController> {
           backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
           shape: MaterialStateProperty.all<RoundedRectangleBorder>(
             RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(Constants.deviceWidth * 0.1),
+              borderRadius: BorderRadius.circular(Get.width * 0.1),
             ),
           ),
         ),

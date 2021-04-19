@@ -25,16 +25,16 @@ class RegisterPage extends GetView<RegisterController> {
   Widget _buildBody() {
     return Container(
       padding: EdgeInsets.only(
-        left: Constants.deviceWidth * 0.1,
-        right: Constants.deviceWidth * 0.1,
-        top: Constants.deviceHeight * 0.18,
+        left: Get.width * 0.1,
+        right: Get.width * 0.1,
+        top: Get.height * 0.18,
       ),
       child: Column(
         children: [
           _buildCurrentAccountLabel(),
-          SizedBox(height: Constants.deviceHeight * 0.02),
+          SizedBox(height: Get.height * 0.02),
           RegisterForm(),
-          SizedBox(height: Constants.deviceHeight * 0.05),
+          SizedBox(height: Get.height * 0.05),
           SignUpButton(),
           LoginRow(),
         ],
@@ -48,7 +48,7 @@ class RegisterPage extends GetView<RegisterController> {
       child: Text(
         'Create\nAccount',
         style: TextStyle(
-          fontSize: Constants.deviceWidth * 0.1,
+          fontSize: Get.width * 0.1,
           color: Colors.white,
           fontWeight: FontWeight.bold,
         ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:shop/src/core/values/constants.dart';
 
 class RegisterBackground extends StatelessWidget {
@@ -17,17 +18,17 @@ class RegisterBackground extends StatelessWidget {
 
   Widget _buildUpperLeftEllipse(context) {
     return Positioned(
-      left: -Constants.deviceWidth * 0.5,
-      top: -Constants.deviceHeight * 0.23,
+      left: -Get.width * 0.5,
+      top: -Get.height * 0.23,
       child: Container(
-        height: Constants.deviceHeight * 0.4,
-        width: Constants.deviceWidth * 1,
+        height: Get.height * 0.4,
+        width: Get.width * 1,
         decoration: BoxDecoration(
           color: Theme.of(context).accentColor,
           borderRadius: BorderRadius.all(
             Radius.elliptical(
-              Constants.deviceWidth * 0.75,
-              Constants.deviceWidth * 0.6,
+              Get.width * 0.75,
+              Get.width * 0.6,
             ),
           ),
         ),
@@ -35,20 +36,19 @@ class RegisterBackground extends StatelessWidget {
     );
   }
 
-   Widget _buildLowerEllipse(context) {
+  Widget _buildLowerEllipse(context) {
     return Positioned(
-      bottom: - Constants.deviceHeight * 0.31,
-      left: - Constants.deviceWidth * 0.1,
+      bottom: -Get.height * 0.31,
+      left: -Get.width * 0.1,
       child: Container(
-        height: Constants.deviceHeight * 0.4,
-        width: Constants.deviceWidth * 1.2,
-        
+        height: Get.height * 0.4,
+        width: Get.width * 1.2,
         decoration: BoxDecoration(
           color: Theme.of(context).accentColor,
           borderRadius: BorderRadius.all(
             Radius.elliptical(
-              Constants.deviceWidth * 1,
-              Constants.deviceWidth * 0.6,
+              Get.width * 1,
+              Get.width * 0.6,
             ),
           ),
         ),

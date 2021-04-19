@@ -18,18 +18,18 @@ class LoginPage extends GetView<LoginController> {
           LoginBackground(),
           Container(
             padding: EdgeInsets.symmetric(
-              horizontal: Constants.deviceWidth * 0.1,
-              vertical: Constants.deviceHeight * 0.1,
+              horizontal: Get.width * 0.1,
+              vertical: Get.height * 0.1,
             ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 _buildLoginText(),
-                SizedBox(height: Constants.deviceHeight * 0.2),
+                SizedBox(height: Get.height * 0.2),
                 LoginForm(),
-                SizedBox(height: Constants.deviceHeight * 0.012),
+                SizedBox(height: Get.height * 0.012),
                 LoginButton(),
-                SizedBox(height: Constants.deviceHeight * 0.01),
+                SizedBox(height: Get.height * 0.01),
                 SignUpRow(),
               ],
             ),
@@ -45,7 +45,7 @@ class LoginPage extends GetView<LoginController> {
       child: Text(
         'Welcome\nBack',
         style: TextStyle(
-          fontSize: Constants.deviceWidth * 0.1,
+          fontSize: Get.width * 0.1,
           color: Colors.white,
           fontWeight: FontWeight.bold,
         ),

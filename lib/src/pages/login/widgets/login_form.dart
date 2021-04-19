@@ -14,9 +14,9 @@ class LoginForm extends GetView<LoginController> {
       child: Column(
         children: [
           _buildEmailTextField(context),
-          SizedBox(height: Constants.deviceHeight * 0.03),
+          SizedBox(height: Get.height * 0.03),
           _buildPasswordTextField(context),
-          SizedBox(height: Constants.deviceHeight * 0.01),
+          SizedBox(height: Get.height * 0.01),
           _buildForgetPasswordButton(context),
         ],
       ),
@@ -27,7 +27,7 @@ class LoginForm extends GetView<LoginController> {
     return TextFormField(
       controller: controller.emailController,
       style: TextStyle(
-        fontSize: Constants.deviceHeight * 0.018,
+        fontSize: Get.height * 0.018,
         color: Theme.of(context).primaryColor,
       ),
       decoration: InputDecoration(
@@ -47,7 +47,7 @@ class LoginForm extends GetView<LoginController> {
         obscureText: controller.isPasswordHidden,
         controller: controller.passwordController,
         style: TextStyle(
-          fontSize: Constants.deviceHeight * 0.018,
+          fontSize: Get.height * 0.018,
           color: Theme.of(context).primaryColor,
         ),
         decoration: InputDecoration(

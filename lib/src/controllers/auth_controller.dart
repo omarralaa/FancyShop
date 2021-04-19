@@ -32,7 +32,19 @@ class AuthController extends GetxController {
       final authResponse =
           await _authRepository.signInWithEmailAndPassword(email, password);
       _authenticate(authResponse);
-    } catch (err) {}
+    } catch (err) {
+      throw (err);
+    }
+  }
+
+  Future<void> signUpWithEmailPassword(Map<String, String> user) async {
+    try {
+      final authResponse =
+          await _authRepository.signUp(user);
+      _authenticate(authResponse);
+    } catch (err) {
+      throw (err);
+    }
   }
 
   Future<void> logout() async {

@@ -13,11 +13,11 @@ class RegisterForm extends GetView<RegisterController> {
       child: Column(
         children: [
           _buildNameTextField(context),
-          SizedBox(height: Constants.deviceHeight * 0.02),
+          SizedBox(height: Get.height * 0.02),
           _buildEmailTextField(context),
-          SizedBox(height: Constants.deviceHeight * 0.02),
+          SizedBox(height: Get.height * 0.02),
           _buildPasswordTextField(context),
-          SizedBox(height: Constants.deviceHeight * 0.02),
+          SizedBox(height: Get.height * 0.02),
           _buildConfirmPasswordTextField(context),
         ],
       ),
@@ -28,7 +28,7 @@ class RegisterForm extends GetView<RegisterController> {
     return TextFormField(
       controller: controller.nameController,
       style: TextStyle(
-        fontSize: Constants.deviceHeight * 0.018,
+        fontSize: Get.height * 0.018,
         color: Colors.white,
       ),
       decoration: InputDecoration(
@@ -55,7 +55,7 @@ class RegisterForm extends GetView<RegisterController> {
     return TextFormField(
       controller: controller.emailController,
       style: TextStyle(
-        fontSize: Constants.deviceHeight * 0.018,
+        fontSize: Get.height * 0.018,
         color: Colors.white,
       ),
       decoration: InputDecoration(
@@ -83,7 +83,7 @@ class RegisterForm extends GetView<RegisterController> {
       obscureText: true,
       controller: controller.passwordController,
       style: TextStyle(
-        fontSize: Constants.deviceHeight * 0.018,
+        fontSize: Get.height * 0.018,
         color: Colors.white,
       ),
       decoration: InputDecoration(
@@ -111,7 +111,7 @@ class RegisterForm extends GetView<RegisterController> {
       obscureText: true,
       controller: controller.confirmPasswordController,
       style: TextStyle(
-        fontSize: Constants.deviceHeight * 0.018,
+        fontSize: Get.height * 0.018,
         color: Colors.white,
       ),
       decoration: InputDecoration(
@@ -128,7 +128,7 @@ class RegisterForm extends GetView<RegisterController> {
       focusNode: controller.confirmPasswordFocusNode,
       onFieldSubmitted: (_) => controller.register(),
       textInputAction: TextInputAction.done,
-      validator: Validations.validatePassword,
+      validator: controller.validateConfirmPassword,
       cursorColor: Colors.white,
     );
   }
