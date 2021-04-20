@@ -39,8 +39,7 @@ class AuthController extends GetxController {
 
   Future<void> signUpWithEmailPassword(Map<String, String> user) async {
     try {
-      final authResponse =
-          await _authRepository.signUp(user);
+      final authResponse = await _authRepository.signUp(user);
       _authenticate(authResponse);
     } catch (err) {
       throw (err);
@@ -56,9 +55,10 @@ class AuthController extends GetxController {
   Future tryAutoLogin() async {
     String value = await storage.read(key: 'token');
     if (value != null) {
-      _setToken(token);
+      _setToken(value);
+    } else {
+      _setToken('');
     }
-    _setToken('');
   }
 
   // Navigate user to screen on auth changing
@@ -66,7 +66,7 @@ class AuthController extends GetxController {
     if (val.isEmpty) {
       Get.offAllNamed(Routes.LOGIN);
     } else {
-      Get.offAllNamed(Routes.HOME);
+      Get.offAllNamed(Routes.DASHBOARD);
     }
   }
 

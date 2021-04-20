@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
 import 'package:shop/src/controllers/auth_controller.dart';
+import 'package:shop/src/pages/dashboard/dashboard_binding.dart';
+import 'package:shop/src/pages/dashboard/dashboard_page.dart';
 import 'package:shop/src/pages/home/home_binding.dart';
 import 'package:shop/src/pages/home/home_page.dart';
 import 'package:shop/src/pages/login/login_binding.dart';
@@ -32,6 +34,11 @@ class AppPages {
       name: Routes.HOME,
       page: () => HomePage(),
       binding: HomeBinding(),
+    ),
+    GetPage(
+      name: Routes.DASHBOARD,
+      page: () => DashboardPage(),
+      binding: DashboardBinding(),
     ),
   ];
 }
