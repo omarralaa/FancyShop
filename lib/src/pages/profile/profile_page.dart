@@ -6,8 +6,7 @@ class ProfilePage extends GetView<ProfileController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-      child: Text('ProfileController'),
-    ));
+      body: Text('ProfileController'),
+    );
   }
 }

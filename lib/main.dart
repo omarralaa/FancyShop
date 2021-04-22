@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:shop/src/controllers/auth_controller.dart';
 import 'package:shop/src/core/theme/app_theme.dart';
@@ -18,7 +19,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: 'Shop',
-      theme: appThemeData,
+      theme: appThemeData(context),
       getPages: AppPages.pages,
       initialRoute: Routes.SPLASH,
     );

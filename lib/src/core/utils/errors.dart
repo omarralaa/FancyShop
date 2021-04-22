@@ -13,7 +13,6 @@ class Errors {
   }
 
   static String registerError(String msg) {
-    print(msg);
     switch (msg) {
       case 'EMAIL_EXISTS':
         return 'This email address already exists';

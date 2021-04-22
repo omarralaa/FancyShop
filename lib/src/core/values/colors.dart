@@ -18,4 +18,10 @@ class AppColors {
   };
 
   static Color hintColor = Color(0xffbfbfbf);
+
+  static Color lightBlack = Color(0xff222222);
+
+  static Color greyText = Color(0xff9B9B9B);
+
+  static Color extrasRed = Color(0xffDB3022);
 }
