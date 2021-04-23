@@ -16,7 +16,7 @@ class LeftLowerTile extends GetView<HomeController> {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: NetworkImage(controller.tilesData[3]['image']),
-                  fit: BoxFit.fill,
+                  fit: BoxFit.cover,
                 ),
               ),
               padding: EdgeInsets.only(

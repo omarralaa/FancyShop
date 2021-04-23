@@ -18,7 +18,7 @@ class RightTile extends GetView<HomeController> {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: NetworkImage(controller.tilesData[1]['image']),
-                  fit: BoxFit.fill,
+                  fit: BoxFit.cover,
                 ),
               ),
               padding: EdgeInsets.only(left: Get.width * 0.1),

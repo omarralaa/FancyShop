@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:shop/src/pages/dashboard/widgets/bottom_navbar_item.dart';
 import 'package:shop/src/pages/home/home_page.dart';
 import 'package:shop/src/pages/profile/profile_page.dart';
+import 'package:shop/src/pages/shop/shop_page.dart';
 
 import 'dashboard_controller.dart';
 
@@ -17,6 +18,7 @@ class DashboardPage extends StatelessWidget {
               index: controller.tabIndex,
               children: [
                 HomePage(),
+                ShopPage(),
                 ProfilePage(),
               ],
             ),
@@ -34,6 +36,13 @@ class DashboardPage extends StatelessWidget {
               ),
               buildBottomNavigationBarItem(
                 index: 1,
+                selectedIndex: controller.tabIndex,
+                label: 'Shop',
+                selectedIcon: Icons.shopping_cart,
+                unselectedIcon: Icons.shopping_cart_outlined,
+              ),
+              buildBottomNavigationBarItem(
+                index: 2,
                 selectedIndex: controller.tabIndex,
                 label: 'Profile',
                 selectedIcon: Icons.person,

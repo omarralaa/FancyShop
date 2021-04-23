@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shop/src/core/values/colors.dart';
 import 'package:shop/src/core/values/constants.dart';
 
 class LoginBackground extends StatelessWidget {
@@ -42,7 +43,7 @@ class LoginBackground extends StatelessWidget {
         height: Get.height * 0.45,
         width: Get.width * 1,
         decoration: BoxDecoration(
-          color: Theme.of(context).primaryColor,
+          color: AppColors.loginRed,
           borderRadius: BorderRadius.all(
             Radius.elliptical(
               Get.width * 0.75,

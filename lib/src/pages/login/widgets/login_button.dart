@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shop/src/core/values/colors.dart';
 
 import '../login_controller.dart';
 
@@ -19,11 +20,10 @@ class LoginButton extends GetView<LoginController> {
               fontWeight: FontWeight.bold,
             ),
           ),
-          style: ButtonStyle(
-            shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-              RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(Get.width * 0.1),
-              ),
+          style: ElevatedButton.styleFrom(
+            primary: AppColors.loginRed,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(Get.width * 0.1),
             ),
           ),
         ),

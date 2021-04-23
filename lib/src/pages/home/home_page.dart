@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shop/src/controllers/category_controller.dart';
 import 'package:shop/src/global_widgets/category_horizontal_list/category_horizontal_section.dart';
 import 'package:shop/src/pages/home/widgets/tiles_grid.dart';
 
@@ -14,11 +15,7 @@ class HomePage extends GetView<HomeController> {
           children: [
             TilesGrid(),
             SizedBox(height: Get.height * 0.03),
-            CategoryHorizontalSection(controller.firstCategory),
-            SizedBox(height: Get.height * 0.05),
-            CategoryHorizontalSection(controller.secondCategory),
-            SizedBox(height: Get.height * 0.05),
-            // Text('HomeController'),
+            Obx(() => _buildLists()),
             // ElevatedButton(
             //   onPressed: controller.logout,
             //   child: Text('logout'),
@@ -27,5 +24,21 @@ class HomePage extends GetView<HomeController> {
         ),
       ),
     );
+  }
+
+  Widget _buildLists() {
+    final categoryController = Get.find<CategoryController>();
+    return categoryController.homeListsCategories.length == 0
+        ? CircularProgressIndicator()
+        : Column(
+            children: [
+              CategoryHorizontalSection(
+                  categoryController.homeListsCategories[0]),
+              SizedBox(height: Get.height * 0.05),
+              CategoryHorizontalSection(
+                  categoryController.homeListsCategories[1]),
+              SizedBox(height: Get.height * 0.05),
+            ],
+          );
   }
 }

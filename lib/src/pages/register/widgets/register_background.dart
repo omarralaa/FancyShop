@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shop/src/core/values/colors.dart';
 import 'package:shop/src/core/values/constants.dart';
 
 class RegisterBackground extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Theme.of(context).primaryColor,
+      color: AppColors.loginRed,
       child: Stack(
         children: [
           _buildUpperLeftEllipse(context),

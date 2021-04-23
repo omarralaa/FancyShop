@@ -24,7 +24,7 @@ class UpperTile extends GetView<HomeController> {
               decoration: BoxDecoration(
                 image: DecorationImage(
                   image: NetworkImage(controller.tilesData[0]['image']),
-                  fit: BoxFit.fill,
+                  fit: BoxFit.cover,
                 ),
               ),
             ),

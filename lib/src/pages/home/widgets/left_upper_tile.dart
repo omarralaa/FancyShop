@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shop/src/core/values/colors.dart';
 import 'package:shop/src/pages/home/home_controller.dart';
 
 class LeftUpperTile extends GetView<HomeController> {

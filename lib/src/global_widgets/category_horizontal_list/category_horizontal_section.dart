@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shop/src/core/values/colors.dart';
 import 'package:shop/src/data/models/category.dart';
+import 'package:shop/src/data/models/promo_category.dart';
 import 'package:shop/src/global_widgets/category_horizontal_list/category_list.dart';
 
 class CategoryHorizontalSection extends StatelessWidget {
-  final CategoryModel categoryModel;
+  final PromoCategoryModel categoryModel;
 
   const CategoryHorizontalSection(this.categoryModel);
 
@@ -17,7 +18,7 @@ class CategoryHorizontalSection extends StatelessWidget {
         children: [
           _buildHeaderRow(),
           SizedBox(height: Get.height * 0.03),
-          CategoryHorizontalList(),
+          CategoryHorizontalList(categoryModel),
         ],
       ),
     );

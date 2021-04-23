@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:shop/src/controllers/auth_controller.dart';
+import 'package:shop/src/controllers/category_controller.dart';
 import 'package:shop/src/core/theme/app_theme.dart';
 import 'package:shop/src/routes/app_pages.dart';
 import 'package:shop/src/routes/app_routes.dart';
@@ -9,6 +10,7 @@ import 'package:shop/src/routes/app_routes.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Get.put<AuthController>(AuthController());
+  Get.lazyPut<CategoryController>(() => CategoryController());
 
   runApp(MyApp());
 }

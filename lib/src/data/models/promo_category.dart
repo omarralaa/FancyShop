@@ -1,28 +1,23 @@
 import 'package:shop/src/data/models/category_item.dart';
-import 'package:shop/src/data/models/gender_enum.dart';
 
-class CategoryModel {
-  int id;
+class PromoCategoryModel {
+ int id;
   String name;
   String description;
-  Gender gender;
-  String imageUrl;
- // List<CategoryItemModel> categoryItems;
+  List<CategoryItemModel> categoryItems;
 
-  CategoryModel({
+  PromoCategoryModel({
     this.id,
     this.name,
     this.description,
-    //this.categoryItems,
-    this.gender,
-    this.imageUrl,
+    this.categoryItems,
   });
 
-  CategoryModel.fromJson(Map<String, dynamic> json) {
+  PromoCategoryModel.fromJson(Map<String, dynamic> json) {
     this.id = json['id'];
     this.name = json['name'];
     this.description = json['description'];
-    //this.categoryItems = categoryItemsFromJson(json['categoryItems']);
+    this.categoryItems = categoryItemsFromJson(json['categoryItems']);
   }
 
   Map<String, dynamic> toJson() {

@@ -37,7 +37,7 @@ class VerticalCategoryItem extends StatelessWidget {
           ),
         ),
         FavoriteButton(),
-        if (categoryItem.discount > 0) _buildDiscountIcon(),
+        if (categoryItem.discount > 0) _buildDiscountIcon(context),
       ],
     );
   }
@@ -54,7 +54,7 @@ class VerticalCategoryItem extends StatelessWidget {
     );
   }
 
-  Widget _buildDiscountIcon() {
+  Widget _buildDiscountIcon(context) {
     return Positioned(
       left: Get.width * 0.05,
       top: Get.height * 0.015,
@@ -64,7 +64,7 @@ class VerticalCategoryItem extends StatelessWidget {
           horizontal: Get.width * 0.02,
         ),
         decoration: BoxDecoration(
-          color: AppColors.extrasRed,
+          color: Theme.of(context).primaryColor,
           borderRadius: BorderRadius.all(Radius.circular(Get.width * 0.1)),
         ),
         child: Text(

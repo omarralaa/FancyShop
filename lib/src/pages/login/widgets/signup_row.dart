@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:shop/src/core/values/colors.dart';
 import 'package:shop/src/pages/login/login_controller.dart';
 
 class SignUpRow extends GetView<LoginController> {
@@ -18,7 +19,7 @@ class SignUpRow extends GetView<LoginController> {
           child: Text(
             'SIGN UP',
             style: TextStyle(
-              color: Theme.of(context).primaryColor,
+              color: AppColors.loginRed,
               fontWeight: FontWeight.bold,
             ),
           ),

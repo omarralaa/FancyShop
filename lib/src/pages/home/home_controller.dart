@@ -1,5 +1,6 @@
 import 'package:get/get.dart';
 import 'package:shop/src/controllers/auth_controller.dart';
+import 'package:shop/src/controllers/category_controller.dart';
 import 'package:shop/src/data/models/category.dart';
 import 'package:shop/src/data/models/category_item.dart';
 
@@ -26,86 +27,19 @@ class HomeController extends GetxController {
 
   get tilesData => _tilesData;
 
-  final _firstCategory = CategoryModel(
-    id: 1,
-    name: 'Sale',
-    description: 'Super summer sale',
-    categoryItems: <CategoryItemModel>[
-      CategoryItemModel(
-        id: 1,
-        name: 'Evening Dress',
-        discount: 20,
-        rating: 4.7,
-        store: 'Dorothy Perkins',
-        numberOfRatings: 10,
-        price: 15.0,
-        imageUrl: 'https://c.stocksy.com/a/YHo300/z9/908272.jpg',
-      ),
-      CategoryItemModel(
-        id: 2,
-        name: 'Sport Dress',
-        discount: 15,
-        rating: 4.2,
-        store: 'Sitlly',
-        numberOfRatings: 7,
-        price: 22,
-        imageUrl:
-            'https://st2.depositphotos.com/3647147/11215/i/950/depositphotos_112159300-stock-photo-young-beautiful-female-model-in.jpg',
-      ),
-      CategoryItemModel(
-        id: 3,
-        name: 'Evening Dress',
-        discount: 20,
-        rating: 4.7,
-        store: 'Dorothy Perkins',
-        numberOfRatings: 10,
-        price: 15.0,
-        imageUrl: 'https://c.stocksy.com/a/YHo300/z9/908272.jpg',
-      ),
-    ],
-  );
+  // CategoryController _categoryController;
 
-  final _secondCategory = CategoryModel(
-    id: 1,
-    name: 'New',
-    description: 'You\'ve never seen it before',
-    categoryItems: <CategoryItemModel>[
-      CategoryItemModel(
-        id: 1,
-        name: 'Evening Dress',
-        discount: 20,
-        rating: 4.7,
-        store: 'Dorothy Perkins',
-        numberOfRatings: 10,
-        price: 15.0,
-        imageUrl: 'https://c.stocksy.com/a/YHo300/z9/908272.jpg',
-      ),
-      CategoryItemModel(
-        id: 2,
-        name: 'Sport Dress',
-        discount: 15,
-        rating: 4.2,
-        store: 'Sitlly',
-        numberOfRatings: 7,
-        price: 22,
-        imageUrl:
-            'https://st2.depositphotos.com/3647147/11215/i/950/depositphotos_112159300-stock-photo-young-beautiful-female-model-in.jpg',
-      ),
-      CategoryItemModel(
-        id: 3,
-        name: 'Evening Dress',
-        discount: 20,
-        rating: 4.7,
-        store: 'Dorothy Perkins',
-        numberOfRatings: 10,
-        price: 15.0,
-        imageUrl: 'https://c.stocksy.com/a/YHo300/z9/908272.jpg',
-      ),
-    ],
-  );
+  // var _categories = <CategoryModel>[].obs;
+  // get promoCategories => _categories;
 
-  CategoryModel get firstCategory => _firstCategory;
-  CategoryModel get secondCategory => _secondCategory;
+  // HomeController() {
+  //   _categoryController = Get.find<CategoryController>();
+  //   setListsData();
+  // }
+
+  // void setListsData() {
+  //   _categories.value = _categoryController.homeListsCategories;
+  // }
 
   void logout() {
     final authController = Get.find<AuthController>();

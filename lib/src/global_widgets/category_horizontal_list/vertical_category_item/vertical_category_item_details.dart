@@ -23,7 +23,7 @@ class VerticalCategoryItemDetails extends StatelessWidget {
         SizedBox(height: Get.height * 0.005),
         _buildNameLabel(),
         SizedBox(height: Get.height * 0.003),
-        _buildDiscountRow(),
+        _buildDiscountRow(context),
       ],
     );
   }
@@ -48,7 +48,7 @@ class VerticalCategoryItemDetails extends StatelessWidget {
     );
   }
 
-  Widget _buildDiscountRow() {
+  Widget _buildDiscountRow(context) {
     final priceAfterDiscount =
         ((100 - categoryItem.discount) / 100 * categoryItem.price).toString();
     return Row(
@@ -65,7 +65,7 @@ class VerticalCategoryItemDetails extends StatelessWidget {
         Text(
           priceAfterDiscount + '\$',
           style: TextStyle(
-            color: AppColors.extrasRed,
+            color: Theme.of(context).primaryColor,
             fontWeight: FontWeight.bold,
           ),
         )
